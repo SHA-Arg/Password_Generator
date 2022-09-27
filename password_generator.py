@@ -1,26 +1,30 @@
 import random
 
-# Function statement.
-def password_generator():
-    capital_letter = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ]
-    lowercase      = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-    symbols        = ['!', '#', '$', '&', '/', '(', ')', '"', '@', '|', '°', '=', '?', '¡', ';', ':', ',', '.', '-', '{', '}', '[', ']', '´', '+', '¨', '*', '_', '>','<']
-    numbers        = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+# Ejecucion de la funcion para generar el password.
 
-    characters = capital_letter + lowercase + symbols + numbers
-    password = []
-    
-    # Size of Password
-    for i in range(15):
-        character_random = random.choice(characters)
-        password.append(character_random)
-    password = "".join(password)
+print("Hola Quiero Ayudarte Con la Seguridad de Tus Contraseñas.")
+print("Te Ayudare a Generar Contraseñas Seguras.")
+
+# Declaro la funcion.
+def password_generator():
+    # Declaro la lista de caracteres.
+    characters = 'abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&/())========??¡*]['
+    # Declaro la variable que va a contener el password.
+    password = ''
+    # Declaro la variable que va a contener el numero de caracteres.
+    length = int(input('Cuantos caracteres quieres que tenga tu password? '))
+    # Declaro la variable que va a contener el numero de caracteres.
+    for i in range(length):
+        password += random.choice(characters)
+    # Retorno el password.
     return password
 
-# Execution.
+# Ejecucion de la funcion para generar el password.
 def run():
     password = password_generator()
-    print('I can suggest this password: ' + password)
+    print('Te Sugiero este password: ' + password)
+    print('Para que sea seguro, te recomendamos que lo cambies.')
+    print('Gracias por usarme. Adios.')
 
 if __name__ == '__main__':
     run()
